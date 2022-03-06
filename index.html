@@ -6,12 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM_Manipulation</title>
 </head>
-<body>
-    <ul id="element">
+<body id = "body">
+    <!--<ul id="element" data ="valid">
         <li class = "List-item">First element</li>
         <li class = "List-item">Second element</li>
         <li class = "List-item">Third element</li>
-    </ul>
+    </ul>-->
+    <div class="allDivs" id="firstdiv">First Div</div>
+    <script>
+        //const allDivs = document.getElementsByClassName("allDivs")
+        const allDivs = document.querySelectorAll(".allDivs")
+
+        console.log(allDivs)
+    </script>
+
+    <!--<div class="allDivs">Second Div</div>
     <table>
         <tr>
             <td>One</td>
@@ -21,7 +30,8 @@
             <td>Three</td>
             <td>Four</td>
         </tr>
-    </table>
+    </table>-->
+    <button id="clickBtn" onclick="alert('Hey, You clicked me')">Click Me</button>
     <script>
         //Root Node
         //console.log(document.documentElement)
@@ -77,9 +87,50 @@
        //const listItems = document.querySelector('.List-item')
         //const listItems = document.querySelectorAll('.List-item')
         //const listItems = document.querySelectorAll('ul > li:last-Child')
-        const listItems = document.querySelectorAll('ul > li:nth-Child(1)')
+        //const listItems = document.querySelectorAll('ul > li:nth-Child(1)')
 
-       console.log(listItems[0].textContent)
+       //console.log(listItems[0].textContent)
+       //console.log(allDivs)
+       //access user defined attributes
+       
+       /*console.log(element.getAttribute('data'))
+       console.log(element.setAttribute('orderplaced','pending'))
+       console.log(element.getAttribute('orderplaced'))
+       console.log(element.hasAttribute('orderplaced'))
+       console.log(element.removeAttribute('orderplaced'))
+       console.log(element.getAttribute('orderplaced'))
+       console.log(element.attributes)*/
+       //creating and removing the node elements
+       //const newDiv = document.createElement('div')
+       //newDiv.textContent = "hey! I am here now"
+       /*newDiv.innerHTML = `<ul id="element" data ="valid">
+        <li class = "List-item">First element</li>
+        <li class = "List-item">Second element</li>
+        <li class = "List-item">Third element</li>
+    </ul>`*/
+       //const newText = document.createTextNode('I am added')
+      // newDiv.appendChild(newText)
+       //body.prepend(newDiv)
+       //body.append(newDiv)
+       //body.after(newDiv)
+       //firstdiv.replaceWith(newDiv) 
+       //firstdiv.remove() 
+
+    //events
+    function callMe(event){
+        console.log(event.type)
+        console.log(event.currentTarget)
+        console.log(event.clientY)
+        console.log(event.clientX)
+        alert("Thanks for Watching")
+    }
+    //clickBtn.onClick = callMe()
+
+   clickBtn.addEventListener('click',callMe)
+   //clickBtn.addEventListener('click',callMe)
+   //clickBtn.removeEventListener('click',callMe)
+
+
 
     </script>
 </body>
